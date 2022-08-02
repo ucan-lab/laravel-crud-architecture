@@ -1,0 +1,22 @@
+<?php
+{{ declareStrictTypes }}
+namespace {{ namespace }};
+{{ imports }}
+use Illuminate\Http\JsonResponse;
+use Illuminate\Routing\Controller;
+
+final class SampleController extends Controller
+{
+    /**
+     * @param SampleRequest $request
+     * @param SampleUseCase $useCase
+     * @return JsonResponse
+     */
+    public function __invoke(SampleRequest $request, SampleUseCase $useCase): JsonResponse
+    {
+        $input = new SampleUseCaseInput();
+        $output = $useCase($input);
+
+        return new JsonResponse($output);
+    }
+}

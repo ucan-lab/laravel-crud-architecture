@@ -1,0 +1,10 @@
+<?php
+{{ declareStrictTypes }}
+namespace {{ namespace }};
+
+final class {{ class }}
+{
+    public function __construct()
+    {
+    }
+}
